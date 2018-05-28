@@ -2,8 +2,8 @@
 # VideoAnalysisEngine
 A video analysis engine with similarity frame retrieval,keyframe faces recognition,keyframe objects detection and etc.
 
-# Requirments
-- ubuntu 18.04 (recommended)
+# Requirments(recommended)
+- ubuntu 18.04 
 - python 3
 - go 1.10
 - gcc 7
