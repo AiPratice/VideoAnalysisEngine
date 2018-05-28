@@ -22,10 +22,10 @@ A video analysis engine with similarity frame retrieval,keyframe faces recogniti
 - liblas-dev
 
 # Install
-- todo...
+- comming...
 
 # Run
- - todo
+ - comming...
 
 # Screenshots
 ![avatar](/doc/img/1.png)
@@ -34,8 +34,9 @@ A video analysis engine with similarity frame retrieval,keyframe faces recogniti
 ![avatar](/doc/img/4.png)
 ![avatar](/doc/img/5.png)
 
-# Cites
-- todo
+# TODO
+- Docker support
+- GPU support (underfinanced -_-!)
 
-# 中文版
-- todo
+# Cites
+- comming...
