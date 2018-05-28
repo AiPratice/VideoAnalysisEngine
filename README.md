@@ -10,15 +10,15 @@ A video analysis engine with similarity frame retrieval,keyframe faces recogniti
 - postgresql 10
 
 # Dependencies
-boost 1.62.0.1
-opencv 3.1
-vlfeat 0.9.20
-yael  https://github.com/jackculpepper/yael
-libyaml-cpp 0.5.2
-pqxx 4.0.1
-protobuf 3.5.1
-libgrpc++ 
-liblas-dev
+- boost 1.62.0.1
+- opencv 3.1
+- vlfeat 0.9.20
+- yael  https://github.com/jackculpepper/yael
+- libyaml-cpp 0.5.2
+- pqxx 4.0.1
+- protobuf 3.5.1
+- libgrpc++ 
+- liblas-dev
 
 # Install
 - todo...
