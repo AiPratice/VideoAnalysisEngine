@@ -1,0 +1,28 @@
+#pg数据库连接
+db_conn: host=127.0.0.1 port=5432 user=postgres dbname=vrs_db sslmode=disable password=postgres
+
+#rpc服务端地址
+rpc_server_address: 0.0.0.0:50051
+
+#视频存储文件夹路径
+videos_dir_path: /home/pkdog/vrs_storage/videos
+
+#视频帧图像存储文件夹路径
+keyframes_dir_path: /home/pkdog/vrs_storage/keyframes
+
+#局部描述算子存储文件夹路径
+local_descriptors_dir_path: /home/pkdog/vrs_storage/local_descriptors
+
+#全局描述算子存储文件夹路径
+global_descriptors_dir_path: /home/pkdog/vrs_storage/global_descriptors
+
+gdindex_filename: frame_based_index.sift_scfv_idx_k512
+
+#临时文件存储文件夹路径
+temp_dir_path: /home/pkdog/vrs_storage/temp
+
+#全局描述算子预训练参数路径
+gdindex_parameters_path: ./trained_parameters
+
+#局部描述算子文件拓展名
+local_descriptor_extension: siftb

@@ -1,0 +1,94 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "edu.gcu.vrs.rpcserver";
+
+package vrs.rpc;
+
+service VrsRpc{
+	//根据路径进行检索，并给出评分
+	rpc Search (SearchRequest) returns (stream SearchResult) {}
+
+	//视频处理请求
+	rpc ProcessVideo(ProcessVideoRequest) returns (Result) {}
+	
+	//合并各个视频的索引为全局索引
+	rpc Merge(Empty) returns (Result) {}
+}
+
+service FaceRpc{
+    //根据标注数据建立人脸分类器
+    rpc BuildClassifer(Empty) returns (Result) {}
+
+    //在视频中检测人脸数据
+    rpc DetectPersonsInVideo(DetectPersonsRequest) returns (Result) {}
+
+	//基于图像的人脸检测
+	rpc DetectPersonInImg(DetectPersonInImgRequest) returns (stream DetectPersonInImgResult) {}
+}
+
+service ObjectRpc{
+	rpc DetectObjectInImg(DetectObjectInImgRequest) returns (stream DetectObjectInImgResult) {}
+}
+
+//物体检测请求
+message DetectObjectInImgRequest{
+	string Path = 1;
+}
+
+//物体检测结果
+message DetectObjectInImgResult{
+	uint32 ClassID = 1;
+	string ClassName = 2;
+	float Prob = 3;
+	int32 Top = 4;
+	int32 Left = 5;
+	int32 Width = 6;
+	int32 Height = 7;
+}
+
+//基于图像人脸的人脸检测请求
+message DetectPersonInImgRequest{
+	string Path = 1;
+}
+
+//人脸检测请求
+message DetectPersonsRequest{
+    uint32 VideoID = 1;
+}
+
+//搜索请求
+message SearchRequest{
+	string ImgPath = 1;//图像路径
+}
+
+//搜索结果
+message SearchResult{
+	float Score = 1; //得分
+	uint64 FrameID = 2; //帧图像id（数据库中）
+}
+
+//视频处理请求
+message ProcessVideoRequest{
+	uint32 VideoID = 1; //视频ID(数据库中)
+}
+
+//普通请求结果
+message Result{
+	uint32 Code = 1; //处理结果代码
+	string Msg = 2; //服务器响应的文本消息
+}
+
+//空请求
+message Empty{
+	
+}
+
+//基于图像人脸的人脸检测响应结果
+message DetectPersonInImgResult{
+	uint32 PersonID = 1; //人物id
+	int32 Top = 2;
+	int32 Right = 3;
+	int32 Bottom = 4;
+	int32 Left = 5;
+}

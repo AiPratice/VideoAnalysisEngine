@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>WebSocket</title>
+</head>
+
+<body>
+  <a href="javascript:sendProcessVideo();void(0);">发送视频处理测试</a>
+  |
+  <a href="javascript:sendMergeIndex();void(0);">发送索引合并测试</a>
+  <p id="output"></p>
+
+
+  <script>
+    var ws = new WebSocket("ws://127.0.0.1:1323/ws")
+
+    ws.onopen = function () {
+      console.log('Connected')
+    }
+
+    ws.onmessage = function (evt) {
+      var out = document.getElementById('output');
+      out.innerHTML += evt.data + '<br>';
+      console.log(evt)
+    }
+
+    function sendProcessVideo() {
+      var data = {
+        Type: 1,
+        Data: {
+          VideoID: 2
+        }
+      };
+      ws.send(JSON.stringify(data));
+    }
+
+    function sendMergeIndex() {
+      var data = {
+        Type: 3,
+        Data: null
+      };
+      ws.send(JSON.stringify(data));
+    }
+  </script>
+</body>
+
+</html>

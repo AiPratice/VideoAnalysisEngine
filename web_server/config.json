@@ -1,0 +1,10 @@
+{
+    "HTTPPort": 1323,
+    "SocketIOPort": 3000,
+    "DbConn": "host=127.0.0.1 port=5432 user=postgres dbname=vrs_db sslmode=disable password=postgres",
+    "StoragePath": "/home/pkdog/vrs_storage",
+    "VideosStoragePath": "/home/pkdog/vrs_storage/videos",
+    "FacesStoragePath": "/home/pkdog/vrs_storage/faces",
+    "RPCServerAddress": "127.0.0.1:50051",
+    "TEMPDirPath" : "/home/pkdog/vrs_storage/temp"
+}
