@@ -23,9 +23,18 @@ A video analysis engine with similarity frame retrieval,keyframe faces recogniti
 # Install
 - todo...
 
+# Run
+ - todo
+
 # Screenshots
 ![avatar](/doc/img/1.png)
 ![avatar](/doc/img/2.png)
 ![avatar](/doc/img/3.png)
 ![avatar](/doc/img/4.png)
 ![avatar](/doc/img/5.png)
+
+# Cites
+- todo
+
+# 中文版
+- todo
